@@ -10,16 +10,18 @@ import log          from 'winston'
 import sass         from 'node-sass-middleware'
 import browserify   from 'browserify-middleware'
 
-const port = 9000;
+const port = process.env.PORT|| 9000;
 
 
-export default const app = express()
+export const app = express();
+
 log.add(log.transports.File, {filename: 'index.log'})
 app.use(morgan('dev'))
 .use(cookieparser())
 .use(session({
   secret: 'aamazingsecretthatkeepseverythingsafe',
-  resave: false
+  resave: false,
+   saveUninitialized: true,
 }))
 .set('view engine','jade')
 .set('views',__dirname+'/views')
@@ -37,8 +39,8 @@ app.use(morgan('dev'))
    }
 }))
 
-export const server = http.createServer(apps).listen(port);
-server.on('listening',()=> { "server is listening on "+port+" ☺"; });
+export const server = http.createServer(app).listen(port);
+server.on('listening',()=> { console.log("server is listening on "+port+" ☺"); });
 process.on('SIGINT',()=>{
   console.log("SIGINT received.")
   process.exit(0)
