@@ -5,14 +5,15 @@ API endpoints should respond to GET request with parameters in the URL. The form
 Possible parameters are:
 ```javascript
   {
-    limit: "<integer>",      // the maximum number of the best records to be returned
-    interval: "<interval>",      // see Formats section
-    start: "<datetime>",     // see Formats section
+    limit: 100,             // [optional] integer -  maximum number of the best records to be returned
+    interval: "<interval>", // see Formats section; may not apply to all endpoints
+    start: "<datetime>",    // see Formats section
     end: "<datetime>"
   }
 ```
 
-Limit and interval.type 
+- `limit`: optional
+- `interval`: optional
 
 Response 
 ==================================================
@@ -53,11 +54,11 @@ The response to requests made to API endpoints should correctly set the HTTP sta
 ```
 /api/geo
 --------------------------------------------------
-- The complete listing of countries for a given time interval.
+- The complete listing of visicountries for a given time interval.
 ```json
 {
   "data": {
-    "visits": [
+    "geo": [
       {
         "country": "<country>",
         "count": 18098096
@@ -106,11 +107,25 @@ The response to requests made to API endpoints should correctly set the HTTP sta
 
 /api/bots
 --------------------------------------------------
+- The data.bots.data element is not a priority requirement.
+
 ```json
 {
   "data": {
     "bots": {
-      "count": 16
+      "count": 16,
+      "data": [
+        {
+          "name": "googlebot",
+          "count": 12091231231,
+          "last_visit": "<datetime>"
+        },
+        {
+          "name": "alexa",
+          "count": 123,
+          "last_visit": "<datetime>"
+        }
+      ]
     },
     "users": {
       "count": 6
@@ -121,10 +136,11 @@ The response to requests made to API endpoints should correctly set the HTTP sta
 
 /api/pages
 --------------------------------------------------
+The most popular pages.
 ```json
 {
   "data": {
-    "toppages": [
+    "pages": [
       {
         "name": "/indexpagename",
         "hits": 16,
@@ -178,6 +194,5 @@ Formats
 - Type: string of 3 chars
 - Possible values: [ISO 3166-1 Alpha-3 codes](https://en.wikipedia.org/wiki/ISO_3166-1)
 
-`<integer>`
---------------------------------------------------
-- Type: integer
+
+<!-- vim: set ft=markdown tw=0 ts=2 sw=2 sts=2 fdm=expr wrap et: -->
