@@ -6,25 +6,26 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title PageCloud Statrix 
     script(src='/js/libs.js')
-    link(href='/style.css', rel='stylesheet' )
+      link(href='/style.css', rel='stylesheet' )
     block head_append
       script(src='/js/index.js')
-  body
+        body
     .container
       .row#top
         .col-xs-12
           h1 PageCloud Statrix
 
-     block main 
-       .row#main
+      .row#main
+        .col-xs-12
+          block main 
+            section#unique
+            section#referrers
+            section#geo
+            section#bots
 
-      footer.row
+      .row#footer
         .col-xs-12.copy.text-center
           p.
             MIT 2016
 
           block footer_append
-
-
-//- vim: set ft=pug tw=0 ts=2 sw=2 sts=2 fdm=marker fmr={{{,}}} et:
-
