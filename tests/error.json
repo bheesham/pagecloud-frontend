@@ -1,0 +1,10 @@
+{
+  "errors": [
+    {
+      "message": "This is the most painful error ever encountered."
+    },
+    {
+      "message": "Another painful error. Go home Sally!"
+    }
+  ]
+}
