@@ -4,6 +4,7 @@
   "description": "amazing stuff",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon -L index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,6 +15,8 @@
   "license": "ISC",
   "private": "true",
   "dependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-2": "^6.5.0",
     "babel-register": "^6.7.2",
     "browserify-middleware": "^7.0.0",
     "cookie-parser": "^1.4.1",
@@ -21,6 +24,7 @@
     "express-session": "^1.13.0",
     "morgan": "^1.7.0",
     "node-sass-middleware": "^0.9.8",
+    "nodemon": "^1.9.1",
     "winston": "^2.2.0"
   }
 }
