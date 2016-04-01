@@ -1,0 +1,18 @@
+{
+  "data": {
+    "pages": [
+      {
+        "name": "/index",
+        "count": 100
+      },
+      {
+        "name": "/things",
+        "count": 1023130
+      },
+      {
+        "name": "/someotherstuff",
+        "count": 12
+      }
+    ]
+  }
+}
