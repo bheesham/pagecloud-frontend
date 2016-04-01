@@ -1,21 +1,19 @@
-require('babel/register');
+import http         from 'http'
+import path         from 'path'
+import assert       from 'assert'
 
-import http from 'http'
-import path from 'path'
-import assert from 'assert'
-
-import express from 'express'
-import session from 'express-session'
+import express      from 'express'
+import session      from 'express-session'
 import cookieparser from 'cookie-parser'
-import morgan from 'morgan'
-import log from 'winston'
-import sass from 'node-sass-middleware'
-import browserify from 'browserify-middleware'
+import morgan       from 'morgan'
+import log          from 'winston'
+import sass         from 'node-sass-middleware'
+import browserify   from 'browserify-middleware'
 
 const port = 9000;
 
 
-export default app = express()
+export default const app = express()
 log.add(log.transports.File, {filename: 'index.log'})
 app.use(morgan('dev'))
 .use(cookieparser())
