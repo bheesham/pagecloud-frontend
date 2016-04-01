@@ -16,6 +16,26 @@ const port = process.env.PORT|| 9000;
 export const app = express();
 
 log.add(log.transports.File, {filename: 'index.log'})
+
+browserify.settings({
+  ignoreMissing: false,
+  detectGlobals: true,
+  insertGlobals: true,
+  transform: [ ["babelify",{sourceMaps:true, presets:["es2015","stage-2"]}] ],
+  cache: true,
+  precompile: true,
+  minify: false,
+  mangle: false,
+  warnings: true,
+  compress: true,
+  debug: true,
+  gzip: true,
+  run: true,
+  external: [ 'jquery', 'plotly.js' ]
+})
+
+const libs_bundle = Array.prototype.concat([{[__dirname+'/app/libs.js']: {run:true}}],browserify.settings.external)
+
 app.use(morgan('dev'))
 .use(cookieparser())
 .use(session({
@@ -38,6 +58,7 @@ app.use(morgan('dev'))
       console.log("error with sass middleware")
    }
 }))
+.get('/js/libs.js',browserify(libs_bundle,{cache:'20 minutes'}))
 
 export const server = http.createServer(app).listen(port);
 server.on('listening',()=> { console.log("server is listening on "+port+" ☺"); });
