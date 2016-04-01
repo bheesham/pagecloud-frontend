@@ -13,6 +13,7 @@ export default function (node_id,json) {
   if(Object.prototype.hasOwnProperty.call(json,"errors")){
    let node = document.getElementById(node_id); 
    $(node).appendChild("1");
+   console.log("errorhandler: caught error in json");
    return true;
   }
   return false;
