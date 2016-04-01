@@ -59,6 +59,7 @@ app.use(morgan('dev'))
    }
 }))
 .get('/js/libs.js',browserify(libs_bundle,{cache:'20 minutes'}))
+.get('/',(req,res,next)=>res.render('index'))
 
 export const server = http.createServer(app).listen(port);
 server.on('listening',()=> { console.log("server is listening on "+port+" ☺"); });
