@@ -160,7 +160,21 @@ The most popular pages.
   }
 }
 ```
-
+/api/changes
+--------------------------------------------------
+- This endpoint is not a priority.
+```json
+{
+  "data": {
+    "changes": [
+      { 
+        "datetime": "<datetime>",
+        "description": "description string in words for end-user"
+      }
+    ] 
+  }
+}
+```
 Errors
 ==================================================
 If an error is encountered the-top level response JSON body object should include a property `errors` with an array of objects containing a property `message` and any other related metadata.
