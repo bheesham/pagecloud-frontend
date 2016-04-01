@@ -19,8 +19,7 @@ export default function (node_Id) {
       height: 400,
       width: 500
     };
-  });
-  
 
-  Plotly.newPlot(node_Id, data, layout);
+    Plotly.newPlot(node_Id, data, layout);
+  });
 }
