@@ -60,6 +60,7 @@ app.use(morgan('dev'))
 }))
 .get('/js/libs.js',browserify(libs_bundle,{cache:'20 minutes'}))
 .use('/js',browserify(path.join(__dirname,"app"),{run:true}))
+.use('/tests',express.static(__dirname+'/tests'))
 .get('/',(req,res,next)=>res.render('index'))
 
 

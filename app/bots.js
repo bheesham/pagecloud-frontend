@@ -1,7 +1,6 @@
-import fs from 'fs'
 
 export default function (node_Id) {
-  var json = JSON.parse(fs.readFileSync('../tests/bots.json','utf8'));
+  var json = $.getJSON('../tests/bots.json');
   
   // if(errorHandler(node_Id, json)){
   //   return;
