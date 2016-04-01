@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import plotly from 'plotly.js'
+import Plotly from 'plotly.js'
 window.$ = $
-window.plotly = plotly
+window.Plotly = Plotly
 console.log("i am alive")
