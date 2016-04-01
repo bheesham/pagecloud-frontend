@@ -58,7 +58,7 @@ app.use(morgan('dev'))
       console.log("error with sass middleware")
    }
 }))
-.get('/js/libs.js',browserify(libs_bundle,{cache:'20 minutes'}))
+.get('/js/libs.js',browserify(libs_bundle,{cache:'1 year'}))
 .use('/js',browserify(path.join(__dirname,"app"),{run:true}))
 .use('/tests',express.static(__dirname+'/tests'))
 .get('/',(req,res,next)=>res.render('index'))
