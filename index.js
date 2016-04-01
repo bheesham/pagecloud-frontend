@@ -26,7 +26,7 @@ app.use(morgan('dev'))
 .set('view engine','jade')
 .set('views',__dirname+'/views')
 .use(sass({
-   src: __dirname + '/sass',
+   src: __dirname + '/style',
    dest: __dirname + '/static',
    response: true,
    debug: false,
