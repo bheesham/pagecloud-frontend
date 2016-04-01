@@ -6,8 +6,8 @@ import pages from './pages'
 
 
 $(()=>{
-  referrers()
-  unique()
-  bots()
-  pages()
+  referrers('referrers')
+  unique('unique')
+  bots('bots')
+  pages('pages')
 })
