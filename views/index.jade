@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title PageCloud Statrix 
+    link(href='js/bundle.js')
+    link(href='./style.css', rel='stylesheet' )
+    block head_append
+  body
+    .container
+      header.row
+        .col-xs-12
+          h1 Duress 
+
+     block main 
+
+      footer.row
+        .col-xs-12.copy.text-center
+          :marked
+          p.
+            MIT 2016
+
+          block footer_append
+
+
+//- vim: set ft=pug tw=0 ts=2 sw=2 sts=2 fdm=marker fmr={{{,}}} et:
+
