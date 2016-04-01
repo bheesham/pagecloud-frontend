@@ -1,0 +1,26 @@
+{
+  "name": "pagecloud-frontend",
+  "version": "0.0.0",
+  "description": "amazing stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gh:pagecloud-decode-hackathon-2016/pagecloud-frontend"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "dependencies": {
+    "babel-register": "^6.7.2",
+    "browserify-middleware": "^7.0.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "morgan": "^1.7.0",
+    "node-sass-middleware": "^0.9.8",
+    "winston": "^2.2.0"
+  }
+}
