@@ -1,12 +1,14 @@
 import http         from 'http'
 import path         from 'path'
 import assert       from 'assert'
+import url          from 'url'
 
 import express      from 'express'
 import session      from 'express-session'
 import cookieparser from 'cookie-parser'
 import morgan       from 'morgan'
 import log          from 'winston'
+import proxy        from 'express-http-proxy'
 
 const port = process.env.PORT|| 9000;
 const basedir = __dirname+'/../..'
@@ -31,6 +33,10 @@ app.use(morgan('dev'))
 .use('/webpack',express.static(basedir+'/build/webpack'))
 .use('/style/',express.static(basedir+'/build/style'))
 .use('/node_modules/bootstrap-sass',express.static(basedir+'/node_modules/bootstrap-sass'))
+.use('/api',proxy('0.0.0.0:5000',{
+  filter: (req,res)=>{return req.method =='GET'},
+  forwardPath: (req,res)=>{return url.parse(req.url).path}
+}))
 .get('/',(req,res,next)=>res.render('index'))
 
 
