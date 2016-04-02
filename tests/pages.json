@@ -1,18 +1,14 @@
 {
   "data": {
-    "pages": [
-      {
-        "name": "/index",
-        "count": 100
-      },
-      {
-        "name": "/things",
-        "count": 1023130
-      },
-      {
-        "name": "/someotherstuff",
-        "count": 12
-      }
-    ]
+        "pages": [{
+        "count": 201,
+        "name": "answers"
+    }, {
+        "count": 150,
+        "name": "features"
+    }, {
+        "count": 101,
+        "name": "terms-conditions"
+    }]
   }
 }

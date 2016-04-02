@@ -24,5 +24,8 @@ export default function (node_Id) {
     };
 
     Plotly.newPlot(node_Id, data, layout);
+
+    var $bots = $('#' + node_Id);
+    $bots.append('Some text');
   });
 }
