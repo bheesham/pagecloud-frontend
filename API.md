@@ -75,6 +75,7 @@ The response to requests made to API endpoints should correctly set the HTTP sta
 
 /api/unique
 --------------------------------------------------
+- Each element in `data.unique[]` and `data.nonunique[]` corresponds to the `<interval>` specified in the request.
 ```json
 {
   "data": {
