@@ -23,7 +23,7 @@ export default function (node_Id) {
       width: 500
     };
 
-    Plotly.newPlot(node_Id, data, layout);
+    // Plotly.newPlot(node_Id, data, layout);
 
     var $bots = $('#' + node_Id);
     $bots.append('Some text');
