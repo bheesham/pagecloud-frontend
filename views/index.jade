@@ -15,6 +15,28 @@ html(lang="en")
         .col-xs-12
           h1 PageCloud Statrix
 
+      .row
+        nav.navbar.navbar-default
+          .container-fluid
+            .navbar-header
+              button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#navbar-collapse")
+                span.sr-only.
+                  Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+                a.navbar-brand(href="#").
+                  Statrix
+            .collapse.navbar-collapse#navbar-collapse
+              ul.nav.navbar-nav
+                li: a(href="#unique") Unique 
+                li: a(href="#bots") Bots
+                li: a(href="#") Hi
+                li: a(href="#") Hi
+                li: a(href="#") Hi
+
+
+
       .row#main
         .col-xs-12
           block main 
