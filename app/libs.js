@@ -3,4 +3,9 @@ window._ = require('lodash')
 window.$ = $ = jQuery = require('jquery')
 window.Plotly = require('plotly.js')
 require('jquery-smooth-scroll')
-  // require('../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js')
+
+$(()=>{
+  $('section').height($(window).height())
+  console.log("heightfix executed")
+
+})
