@@ -47,7 +47,8 @@ export default function (node_Id) {
         projection:{
             type: 'mercator'
         }
-      }
+      },
+      title: "User Geoplot"
     };
 
     Plotly.plot(node_Id, data, layout);   

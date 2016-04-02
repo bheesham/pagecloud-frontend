@@ -36,11 +36,10 @@ export default function(node_Id) {
       orientation: 'h'
     }];
 
-    // var layout = {
-    //   height: 400,
-    //   width: 500
-    // };
+    var layout = {
+      title: "Top Referrers"
+    };
 
-    Plotly.newPlot(node_Id, data);
+    Plotly.newPlot(node_Id, data, layout);
   });
 }

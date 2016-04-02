@@ -57,17 +57,11 @@ export default function (node_Id) {
     };
 
     var layout = {
-      xaxis: {
-        showgrid: false,                  // remove the x-axis grid lines
-        tickformat: "%B, %Y"              // customize the date format to "month, day"
-      },
-      margin: {                           // update the left, bottom, right, top margin
-        l: 40, b: 10, r: 10, t: 20
-      }
+      title: "Unique Users"
     };
 
     var data = [unique, nonunique];
 
-    Plotly.plot(node_Id, data);
+    Plotly.plot(node_Id, data, layout);
   });
 }

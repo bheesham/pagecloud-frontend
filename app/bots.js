@@ -1,6 +1,6 @@
 import errorHandler from './errorhandler'
 export default function (node_Id) {
-  $.getJSON('tests/bots.json',json => {
+  $.getJSON('/tests/bots.json',json => {
     if(errorHandler(node_Id, json)){
       return;
     }
@@ -13,10 +13,8 @@ export default function (node_Id) {
       values: [botCount,userCount],
       labels: ['Bots','Users'],
       type: 'pie',
-      maker: {
-        titlefont: {
-          color: '#444'
-        } 
+      textfont:{
+        size: 18,
       }
     }];
 
