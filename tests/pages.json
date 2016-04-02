@@ -4,8 +4,14 @@
         "count": 201,
         "name": "answers"
     }, {
-        "count": 150,
+        "count": 160,
         "name": "features"
+    }, {
+        "count": 170,
+        "name": "pricing"
+    }, {
+        "count": 140,
+        "name": "privacy-policy"
     }, {
         "count": 101,
         "name": "terms-conditions"
