@@ -39,13 +39,15 @@ export default function (node_Id) {
     }];
 
     var layout = {
+      width: 1225,
+      height: 787.5,
       geo:{
         scope: "world",
         showframe: false,
         projection:{
             type: 'mercator'
         }
-      },
+      }
     };
 
     Plotly.plot(node_Id, data, layout);   

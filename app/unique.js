@@ -45,13 +45,15 @@ export default function (node_Id) {
     var unique = {
       x: uniqueDates,
       y: uniqueCounts,
-      mode: 'scatter'
+      mode: 'scatter',
+      name: 'unique'
     };
 
     var nonunique = {
       x: nonuniqueDates,
       y: nonuniqueCounts,
-      mode: 'scatter'
+      mode: 'scatter',
+      name: 'nonunique'
     };
 
     var layout = {
