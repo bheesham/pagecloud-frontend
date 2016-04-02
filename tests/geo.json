@@ -1,65 +1,35 @@
 {
     "data": {
         "geo": [{
-            "country": "CZ",
+            "country": "CZE",
             "count": 5
         }, {
-            "country": "YE",
+            "country": "YEM",
             "count": 51
         }, {
-            "country": "CN",
+            "country": "CAN",
             "count": 22
         }, {
-            "country": "CN",
+            "country": "CHN",
             "count": 68
         }, {
-            "country": "PE",
+            "country": "PER",
             "count": 78
         }, {
-            "country": "PT",
+            "country": "PRT",
             "count": 55
         }, {
-            "country": "LT",
+            "country": "LTU",
             "count": 27
         }, {
-            "country": "HN",
+            "country": "HKG",
             "count": 28
         }, {
-            "country": "BR",
+            "country": "BRA",
             "count": 35
         }, {
-            "country": "JP",
+            "country": "JPN",
             "count": 7
-        }, {
-            "country": "MK",
-            "count": 3
-        }, {
-            "country": "PE",
-            "count": 51
-        }, {
-            "country": "PH",
-            "count": 70
-        }, {
-            "country": "BR",
-            "count": 77
-        }, {
-            "country": "PH",
-            "count": 5
-        }, {
-            "country": "ES",
-            "count": 71
-        }, {
-            "country": "KR",
-            "count": 92
-        }, {
-            "country": "LT",
-            "count": 4
-        }, {
-            "country": "CN",
-            "count": 55
-        }, {
-            "country": "ID",
-            "count": 75
         }]
     }
 }

@@ -7,6 +7,7 @@ import pages from './pages'
 
 $(()=>{
   referrers('referrers')
+  geo('geo')
   unique('unique')
   bots('bots')
   pages('pages')

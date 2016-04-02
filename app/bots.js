@@ -12,7 +12,12 @@ export default function (node_Id) {
     var data = [{
       values: [botCount,userCount],
       labels: ['Bots','Users'],
-      type: 'pie'
+      type: 'pie',
+      maker: {
+        titlefont: {
+          color: '#444'
+        } 
+      }
     }];
 
     var layout = {
