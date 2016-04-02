@@ -46,14 +46,16 @@ export default function (node_Id) {
       x: uniqueDates,
       y: uniqueCounts,
       mode: 'scatter',
-      name: 'unique'
+      name: 'unique',
+      fill: 'tozeroy'
     };
 
     var nonunique = {
       x: nonuniqueDates,
       y: nonuniqueCounts,
       mode: 'scatter',
-      name: 'nonunique'
+      name: 'nonunique',
+      fill: 'tonexty'
     };
 
     var layout = {
