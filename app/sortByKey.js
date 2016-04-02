@@ -1,8 +1,11 @@
-export default function (array, key) {
-  return array.sort(function(a, b) {
-        var x = a[key];
-        var y = b[key];
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+export default function (arr, key) {
+    Array.prototype.sort.call(arr,(a,b)=>{
+      let x = a[key];
+      let y = b[key];
+      if (x >= y )
+        return -1;
+      else
+        return 1;
     });
 }
 

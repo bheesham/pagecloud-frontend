@@ -38,6 +38,7 @@
     "jquery-smooth-scroll": "^1.7.2",
     "livereload": "^0.4.1",
     "load-grunt-tasks": "^3.4.1",
+    "lodash": "^4.7.0",
     "morgan": "^1.7.0",
     "nodemon": "^1.9.1",
     "plotly.js": "^1.7.1",

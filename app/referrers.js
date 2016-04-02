@@ -6,16 +6,14 @@ export default function(node_Id) {
     if (errorHandler(node_Id, json)) {
       return;
     }
+    var referrers = json.data.referrers;
+    sortByKey(referrers,'count');
 
-    let referrers = sortByKey(json.data.referrers,'count');
-    let referrers_showable = [];
+    var referrers_showable = [];
     let name = [];
     let count = [];
 
     for (let i = 0; i < referrers.length && referrers_showable.length < 15; i++) {
-      if(referrers[i].count <= 2){
-        continue;
-      }
       if(referrers[i].name==="pagecloud.com"){
         continue;
       }
@@ -25,6 +23,7 @@ export default function(node_Id) {
       referrers_showable.push(referrers[i]);
     }
 
+    // TODO : reverse showable
     for (let i = 0; i < referrers_showable.length; i++) {
       name[i] = referrers_showable[i].name;
       count[i] = referrers_showable[i].count;
