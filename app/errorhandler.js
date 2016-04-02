@@ -1,4 +1,3 @@
-import fs from 'fs'
 
 /**
  * // call me maybe, like so:

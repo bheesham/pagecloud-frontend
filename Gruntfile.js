@@ -10,7 +10,6 @@ module.exports = function(grunt){
       },
       build: {
         files: [
-          { 'build/server.js':'server.js' },
           {
             expand: true,
             cwd: 'app/',
@@ -23,7 +22,8 @@ module.exports = function(grunt){
     express: {
       dev: {
         options: {
-          script: 'build/server.js'
+          port: 9000,
+          script: 'build/app/server.js'
         }
       }
     },
@@ -37,7 +37,8 @@ module.exports = function(grunt){
             expand: true,
             cwd: 'style/',
             dest: 'build/style',
-            src: ['*.scss']
+            src: ['*.scss'],
+            ext: '.css'
           }
         ]
       }
@@ -48,23 +49,46 @@ module.exports = function(grunt){
     },
 
     webpack: {
-      build: {
-        entry: 'app/libs.js',
+      options: {
         output: {
-          path: 'build/',
-          filename: 'libs.js',
+          path: 'build/webpack',
           stats: {
             colors: true,
             modules: true,
             reasons: true,
           },
-          failOnError: true
+          failOnError: true,
+          keepalive: true,
+          watch: true
+        }
+      },
+      libs: {
+        entry: './build/app/libs.js',
+        output: {
+          filename: 'libs.js',
         },
+      },
+      index: {
+        entry: './build/app/index.js',
+        output: {
+          filename: 'index.js',
+        },
+      }
+    },
+
+    watch: {
+      express: {
+        files: [ 'server.js','app/**/*.js' ],
+        tasks: ['babel:build','express'],
+        options: {
+          spawn: false
+        }
       }
     }
   })
 
-  grunt.registerTask('build',['clean:build','sass:build','babel:build'])
-  grunt.registerTask('serve',['express'])
+  grunt.registerTask('buildjs',['babel:build','webpack:libs','webpack:index'])
+  grunt.registerTask('build',['clean:build','buildjs','sass:build'])
+  grunt.registerTask('serve',['express','watch'])
   grunt.registerTask('default',['build','serve'])
 }

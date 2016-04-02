@@ -4,7 +4,7 @@
   "description": "amazing stuff",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L babel.js",
+    "start": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +21,6 @@
     "babel-register": "^6.7.2",
     "babelify": "^7.2.0",
     "bootstrap-sass": "^3.3.6",
-    "browserify-middleware": "^7.0.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
@@ -29,6 +28,7 @@
     "grunt-babel": "^6.0.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-express-server": "^0.5.2",
     "grunt-sass": "^1.1.0",
     "grunt-webpack": "^1.0.11",
