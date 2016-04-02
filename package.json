@@ -25,12 +25,21 @@
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "grunt": "^0.4.5",
+    "grunt-babel": "^6.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-express-server": "^0.5.2",
+    "grunt-sass": "^1.1.0",
+    "grunt-webpack": "^1.0.11",
     "jade": "^1.11.0",
     "jquery": "^2.2.2",
+    "load-grunt-tasks": "^3.4.1",
     "morgan": "^1.7.0",
-    "node-sass-middleware": "^0.9.8",
     "nodemon": "^1.9.1",
     "plotly.js": "^1.7.1",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
     "winston": "^2.2.0"
   }
 }
