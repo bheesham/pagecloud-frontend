@@ -1,34 +1,36 @@
 import errorHandler from './errorhandler'
-export default function (node_Id) {
-  $.getJSON('/tests/referrers.json',json => {
-    if(errorHandler(node_Id, json)){
-      return;
-    }
+import sortByKey from './sortByKey'
+export default function(node_Id) {
+    $.getJSON('/tests/referrers.json', json => {
+        if (errorHandler(node_Id, json)) {
+            return;
+        }
 
-    var referrers = [];
-    var count = [];
+        var referrers = json.data.referrers;
+        var name = [];
+        var count = [];
 
-    for (var i = 0; i < json.data.referrers.length; i++) {
-      referrers[i] = json.data.referrers[i].name;
-      count[i] = json.data.referrers[i].count;
-    }
+        console.log(referrers);
+        var referrers = sortByKey(referrers, 'count');
+        console.log(referrers);
 
-    count.sort(function(a, b){return a-b});
+        for (var i = 0; i < referrers.length; i++) {
+            name[i] = referrers[i].name;
+            count[i] = referrers[i].count;
+        }
 
-    console.log(count);
+        var data = [{
+            type: 'bar',
+            x: count,
+            y: name,
+            orientation: 'h'
+        }];
 
-    var data = [{
-      type: 'bar',
-      x: count,
-      y: referrers,
-      orientation: 'h'
-    }];
+        // var layout = {
+        //   height: 400,
+        //   width: 500
+        // };
 
-    // var layout = {
-    //   height: 400,
-    //   width: 500
-    // };
-
-    Plotly.newPlot(node_Id, data);
-  });
+        Plotly.newPlot(node_Id, data);
+    });
 }
