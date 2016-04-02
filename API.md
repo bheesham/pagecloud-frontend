@@ -6,14 +6,11 @@ Possible parameters are:
 ```javascript
   {
     limit: 100,             // [optional] integer -  maximum number of the best records to be returned
-    interval: "<interval>", // see Formats section; may not apply to all endpoints
+    interval: "<interval>", // [optional] see Formats section; may not apply to all endpoints
     start: "<datetime>",    // see Formats section
     end: "<datetime>"
   }
 ```
-
-- `limit`: optional
-- `interval`: optional
 
 Response 
 ==================================================
@@ -175,6 +172,26 @@ The most popular pages.
   }
 }
 ```
+
+/api/paths
+--------------------------------------------------
+```json
+{
+  "data": {
+    "paths": [
+      {
+        "nodes": ["/page1","/page2","/buynow"],
+        "count": 2131
+      },
+      {
+        "nodes": ["/page1","/buynow"],
+        "count": 213
+      }
+    ]
+  }
+}
+```
+
 Errors
 ==================================================
 If an error is encountered the-top level response JSON body object should include a property `errors` with an array of objects containing a property `message` and any other related metadata.
