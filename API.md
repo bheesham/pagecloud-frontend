@@ -4,10 +4,15 @@ API endpoints should respond to GET request with parameters in the URL. The form
 
 Possible parameters are:
 ```javascript
-  {
-    limit: 100,             // [optional] integer -  maximum number of the best records to be returned
-    interval: "<interval>", // [optional] see Formats section; may not apply to all endpoints
-    start: "<datetime>",    // see Formats section
+{
+    // [optional] integer -  maximum number of the best records to be returned
+    limit: 100,
+
+    // [optional] see Formats section; may not apply to all endpoints
+    interval: "<interval>",
+
+    // see Formats section
+    start: "<datetime>",
     end: "<datetime>"
   }
 ```
@@ -18,10 +23,10 @@ The response to requests made to API endpoints should correctly set the HTTP sta
 
 ```json
 {
-  "interval": "<interval>",
-  "start": "<datetime>",
-  "end": "<datetime>",
-  "data": [{},{},{},...]
+    "interval": "<interval>",
+    "start": "<datetime>",
+    "end": "<datetime>",
+    "data": [{},{},{},...]
 }
 ```
 
@@ -54,22 +59,22 @@ The response to requests made to API endpoints should correctly set the HTTP sta
 - The complete listing of visicountries for a given time interval.
 ```json
 {
-  "data": {
-    "geo": [
-      {
-        "country": "<country>",
-        "count": 18098096
-      },
-      {
-        "country": "GER",
-        "count": 26
-      },
-      {
-        "country": "USA",
-        "count": 14
-      }
-    ]
-  }
+    "data": {
+        "geo": [
+            {
+                "country": "<country>",
+                "count": 18098096
+            },
+            {
+                "country": "GER",
+                "count": 26
+            },
+            {
+                "country": "USA",
+                "count": 14
+            }
+        ]
+    }
 }
 ```
 
@@ -109,26 +114,32 @@ The response to requests made to API endpoints should correctly set the HTTP sta
 
 ```json
 {
-  "data": {
-    "bots": {
-      "count": 16,
-      "data": [
-        {
-          "name": "googlebot",
-          "count": 12091231231,
-          "last_visit": "<datetime>"
+    "data": {
+        agents": [
+            {
+                "count": ​8,
+                "name": "RankActiveLinkBot"
+            },
+            {
+                "count": ​6,
+                "name": "Maxthon"
+            },
+            {
+                "count": ​25,
+                "name": "Scrapy"
+            },
+            ...
+            ...
+            ...
+        ],
+        "categories": {
+            "bot": ​2992,
+            "mobile": ​2899,
+            "pc": ​27904,
+            "tablet": ​902
         },
-        {
-          "name": "alexa",
-          "count": 123,
-          "last_visit": "<datetime>"
-        }
-      ]
-    },
-    "users": {
-      "count": 6
+        "count": ​34697
     }
-  }
 }
 ```
 
