@@ -30,6 +30,7 @@ app.use(morgan('dev'))
 .use('/js',express.static(basedir+'/build/app'))
 .use('/webpack',express.static(basedir+'/build/webpack'))
 .use('/style/',express.static(basedir+'/build/style'))
+.use('/node_modules/bootstrap-sass',express.static(basedir+'/node_modules/bootstrap-sass'))
 .get('/',(req,res,next)=>res.render('index'))
 
 

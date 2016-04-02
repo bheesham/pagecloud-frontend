@@ -50,6 +50,7 @@ module.exports = function(grunt){
 
     webpack: {
       options: {
+        devtool: 'source-map',
         output: {
           path: 'build/webpack',
           stats: {
@@ -81,7 +82,7 @@ module.exports = function(grunt){
         livereload: true
       },
       express: {
-        files: [ 'server.js'],
+        files: [ 'app/server.js'],
         tasks: ['buildjs','express'],
         options: {
           spawn: false
