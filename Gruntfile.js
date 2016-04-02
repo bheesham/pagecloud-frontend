@@ -77,12 +77,19 @@ module.exports = function(grunt){
     },
 
     watch: {
+      options: {
+        livereload: true
+      },
       express: {
-        files: [ 'server.js','app/**/*.js' ],
-        tasks: ['babel:build','express'],
+        files: [ 'server.js'],
+        tasks: ['buildjs','express'],
         options: {
           spawn: false
         }
+      },
+      js: {
+       files: ['app/**/*.js'],
+       tasks: ['buildjs']
       }
     }
   })
