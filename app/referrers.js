@@ -1,7 +1,7 @@
 import errorHandler from './errorhandler'
 import sortByKey from './sortByKey'
 export default function(node_Id) {
-    $.getJSON('/tests/referrers.json', json => {
+    $.getJSON('/api/referrers', json => {
         if (errorHandler(node_Id, json)) {
             return;
         }
