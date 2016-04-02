@@ -1,4 +1,7 @@
 
+var jQuery = require('jquery');
+global.jQuery = jQuery;
+var webpack = require('webpack')
 module.exports = function(grunt){
   require('load-grunt-tasks')(grunt);
   grunt.initConfig({
@@ -51,6 +54,12 @@ module.exports = function(grunt){
     webpack: {
       options: {
         devtool: 'source-map',
+        // plugins: [
+          // new webpack.ProvidePlugin({
+            // $: 'jquery',
+            // jQuery: 'jquery'
+          // })
+        // ],
         output: {
           path: 'build/webpack',
           stats: {
@@ -80,6 +89,11 @@ module.exports = function(grunt){
     watch: {
       options: {
         livereload: true
+      },
+      sass: {
+       files: ['style/**/*.scss'],
+       tasks: [ 'sass:build'  ]
+
       },
       express: {
         files: [ 'app/server.js'],

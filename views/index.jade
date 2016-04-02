@@ -13,10 +13,11 @@ html(lang="en")
     .container
       .row#top
         .col-xs-12
-          h1 PageCloud Statrix
+          section#titlescreen
+            h1 PageCloud Statrix
 
       .row
-        nav.navbar.navbar-default
+        nav.navbar.navbar-default.navbar-fixed-top.hidden
           .container-fluid
             .navbar-header
               button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#navbar-collapse")
@@ -29,11 +30,10 @@ html(lang="en")
                   Statrix
             .collapse.navbar-collapse#navbar-collapse
               ul.nav.navbar-nav
-                li: a(href="#unique") Unique
-                li: a(href="#bots") Bots
-                li: a(href="#") Hi
-                li: a(href="#") Hi
-                li: a(href="#") Hi
+                li: a(href="#unique") Unique Users
+                li: a(href="#referrers") Top Referrers
+                li: a(href="#geo") Geoplot
+                li: a(href="#bots") Bots v. Users 
 
 
 
@@ -44,8 +44,6 @@ html(lang="en")
             section#referrers
             section#geo
             section#bots
-            section#pages.row
-              .dummy.col-md-2
 
       .row#footer
         .col-xs-12.copy.text-center

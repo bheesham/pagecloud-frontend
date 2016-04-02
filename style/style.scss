@@ -1,5 +1,9 @@
 @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-#main {
+section#titlescreen{
+  h1{
+    margin: 20% auto;
+    text-align: center;
+  }
 }
 
 .pageScreenshot img {
